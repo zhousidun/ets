@@ -12,7 +12,7 @@ public class MainController {
 	public String index(){
 		return "index";
 	}
-	
+	//主要controller
 	//跳转至主页
 	@RequestMapping("goHomepage")
 	public String goHomepage(){
