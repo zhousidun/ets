@@ -29,4 +29,18 @@ public class StudentDaoImpl extends BaseDaoImpl implements StudentDao {
 		return student;
 	}
 
+	@Override
+	public void update(Student student) {
+		Session session=getSession();
+		session.merge(student);
+		session.flush();
+		session.close();
+	}
+
+	@Override
+	public Student getStudent(String id) {
+		Session session=getSession();
+		return (Student) session.get(Student.class, id);
+	}
+
 }

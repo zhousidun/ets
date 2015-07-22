@@ -1,7 +1,7 @@
 package com.ets.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Student implements java.io.Serializable {
 	private String answer;
 	private String profession;
 	private String cardNo;
-	private Set<StuResult> stuResults = new HashSet<StuResult>(0);
+	private List<StuResult> stuResults = new ArrayList<StuResult>(0);
 
 	// Constructors
 
@@ -44,7 +44,7 @@ public class Student implements java.io.Serializable {
 	/** full constructor */
 	public Student(String id, String name, String pwd, String sex,
 			String joinTime, String question, String answer, String profession,
-			String cardNo, Set<StuResult> stuResults) {
+			String cardNo, List<StuResult> stuResults) {
 		this.id = id;
 		this.name = name;
 		this.pwd = pwd;
@@ -141,12 +141,12 @@ public class Student implements java.io.Serializable {
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "student")
-	public Set<StuResult> getStuResults() {
+	public List<StuResult> getStuResults() {
 		return this.stuResults;
 	}
 
-	public void setStuResults(Set<StuResult> stuResults) {
+	public void setStuResults(List<StuResult> stuResults) {
 		this.stuResults = stuResults;
 	}
-
+	
 }

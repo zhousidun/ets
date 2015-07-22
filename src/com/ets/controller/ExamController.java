@@ -1,5 +1,6 @@
 package com.ets.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,8 @@ public class ExamController {
 	private PaperService pService;
 	@Resource
 	private StuResultService srService;
+	@Autowired
+	private StudentService sService;
 	//选择考试课程
 	@RequestMapping("selectLesson")
 	public String selectLesson(HttpSession session,ModelMap model){
@@ -158,5 +161,17 @@ public class ExamController {
 		result.setResTotal(sResult+mResult);
 		result.setJoinTime(TimeUtil.getTime());
 		return result;
+	}
+	
+	@RequestMapping("queryResult")
+	public String queryResult(HttpSession session,ModelMap model){
+		Student student=(Student) session.getAttribute("loginStudent");
+		if(student==null)
+			return "redirect:../index.do";
+		String stuId=student.getId();
+		List<StuResult> stuResults=sService.getStudentById(stuId).getStuResults();
+		System.out.println("stuResult:"+stuResults.size());
+		model.put("stuResults", stuResults);
+		return "queryResult";
 	}
 }

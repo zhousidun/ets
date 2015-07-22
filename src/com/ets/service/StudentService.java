@@ -2,7 +2,6 @@ package com.ets.service;
 
 import com.ets.entity.*;
 
-import org.junit.Test;
 import org.springframework.stereotype.Service;
 import com.ets.dao.*;
 import java.util.*;
@@ -20,5 +19,13 @@ public class StudentService {
 
 	public Student checkLogin(String name, String pwd) {
 		return dao.checkLogin(name,pwd);
+	}
+	
+	public void update(Student student){
+		dao.update(student);
+	}
+	
+	public Student getStudentById(String id){
+		return dao.getStudent(id);
 	}
 }
