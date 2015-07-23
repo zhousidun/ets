@@ -6,5 +6,6 @@
 		<class>com.ets.entity.Student</class>
 		<class>com.ets.entity.Lesson</class>
 		<class>com.ets.entity.Question</class>
+		<class>com.ets.entity.Manager</class>
 	</persistence-unit>
 </persistence>

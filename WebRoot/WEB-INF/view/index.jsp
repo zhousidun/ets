@@ -64,7 +64,7 @@ function check(form){
    <tr>
      	<td height="40">&nbsp;</td>
      	<td height="31" colspan="2" align="right" valign="bottom">
-     		<a href="#">进入后台</a>
+     		<a href="manage/goLogin.do">进入后台</a>
      	</td>
      	<td>&nbsp;</td>
    </tr>

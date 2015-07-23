@@ -2,5 +2,5 @@ detect.m2m=true
 detect.o2o=true
 eclipse.preferences.version=1
 generate.version=false
-re.settings=/exam/jpa.reveng.xml
+re.settings=
 re.strategy=

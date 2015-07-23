@@ -1,3 +1,5 @@
+show tables;
+
 select * from lesson;
 delete from lesson where id=6;
 
@@ -16,3 +18,6 @@ select * from stu_result;
 
 select * from stu_result;
 delete from stu_result where id>0;
+
+select * from manager;
+update manager set pwd='111' where id=1;
